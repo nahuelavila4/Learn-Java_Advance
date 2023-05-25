@@ -10,7 +10,16 @@ import java.util.*;
  *
  * @author nahuel
  */
-public class Empleado implements Comparable{ //implementamos interfaz Comparable
+public class Empleado implements Comparable, Trabajador_Bonus{//implementamos interfaz Comparable
+    
+    private String nombre;
+    private double sueldo;
+    private Date altacontrato;
+    private int Id;
+    private static int Idsiguiente;
+   
+        
+    //Interfaces
     public int compareTo(Object miObj){ //compareTo debe recibir parametro de tipo Objeto
         Empleado otroEmp = (Empleado) miObj;
         if(this.sueldo < otroEmp.sueldo){
@@ -21,12 +30,12 @@ public class Empleado implements Comparable{ //implementamos interfaz Comparable
         }
         return 0;
     }
-    private String nombre;
-    private double sueldo;
-    private Date altacontrato;
-    private int Id;
-    private static int Idsiguiente;
     
+    public double establece_bonus(double plata){
+        return Trabajador_Bonus.minimo+plata;
+    }
+    
+    //Constructores
     public Empleado(String nombre, double sueldo, int anio, int mes, int dia){
         this.nombre = nombre;
         this.sueldo = sueldo;
@@ -39,6 +48,7 @@ public class Empleado implements Comparable{ //implementamos interfaz Comparable
         this(nombre, 60000, 2023, 5, 5);
     }
     
+    //Metodos Getter y Setter
     public String get_nombre(){
         return nombre;
     }

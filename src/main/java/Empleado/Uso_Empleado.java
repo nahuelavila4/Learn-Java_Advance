@@ -22,9 +22,10 @@ public class Uso_Empleado {
         misEmpleados[3] = new Empleado("Julieta", 4224, 2020, 7, 4);
         misEmpleados[4] = jefe1;//Polimorfismo Metodo de Sustitucion
         misEmpleados[5] = new Jefe("Georgina", 8984, 2022,4, 11);
-        
+       
         //Casting
         Jefe jefe2 = (Jefe) misEmpleados[5];
+        jefe2.tomar_decisiones("Irse antes");
         jefe2.set_incentivo(10000);
         
         for(Empleado e: misEmpleados){
